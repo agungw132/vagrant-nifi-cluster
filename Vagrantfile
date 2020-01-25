@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
         vb.name = servers["name"] # Name of the VM in VirtualBox
         vb.cpus = servers["cpus"] # How many CPUs to allocate to the VM
         vb.memory = servers["ram"] # How much memory to allocate to the VM
-        vb.customize ["modifyvm", :id, "--cpuexecutioncap", "33"]  # Limit to VM to 33% of available CPU
+        vb.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]  # Limit to VM to 33% of available CPU
       end
 
       srv.vm.provision :shell, inline: "/opt/nifi/bin/nifi.sh start"
